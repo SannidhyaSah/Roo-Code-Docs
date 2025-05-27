@@ -74,6 +74,11 @@ Always restart all open terminals after changing any of these settings.
 <img src="/img/shell-integration/shell-integration-11.png" alt="Inherit environment variables checkbox" width="600" />
 This setting controls whether Roo Code's terminal sessions use the same environment variables (like `PATH`, API keys, etc.) as your main VSCode/Cursor environment. It directly mirrors the VSCode global setting [`terminal.integrated.inheritEnv`](https://code.visualstudio.com/docs/editor/integrated-terminal#_inherit-environment-variables). Keep this enabled (default for VSCode) if you want Roo commands to operate with the same context and tools available in your regular VSCode terminal. Consider disabling it only if you need a completely clean, isolated environment for Roo's terminal tasks or are troubleshooting complex environment variable conflicts.
 
+### Runtime Environment
+On macOS (and possibly other operating systems) the environment provided to VSCode, and consequently Roo Code, can differ depending on how VSCode is launched.  
+If launched from the command line `vscode` command, VSCode and Roo Code will inherit the environment from the shell that launched it, and all will (usually) be well.
+If launched from the Finder, Dock, or Spotlight, environment exported from `.zshrc`, or `.zprofile` will likely be missing.  If you have environment variables set in one of those files, and find they are missing when running VSCode, move them to .zshenv, and log out and back in again, so the window manager will pick up the new environment settings.
+
 #### Disable terminal shell integration
 <img src="/img/shell-integration/shell-integration-9.png" alt="Disable terminal shell integration checkbox" width="600" />
 This setting determines how Roo Code executes terminal commands.
