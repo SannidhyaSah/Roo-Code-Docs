@@ -7,6 +7,8 @@ sidebar_label: What is MCP?
 
 MCP (Model Context Protocol) is a standardized communication protocol for LLM systems to interact with external tools and services. It functions as a universal adapter between AI assistants and various data sources or applications.
 
+---
+
 ## How It Works
 
 MCP uses a client-server architecture:
@@ -20,6 +22,8 @@ Think of MCP as similar to a USB-C port in the sense that any compatible LLM can
 
 For example, an AI using MCP can perform tasks like "search our company database and generate a report" without requiring specialized code for each database system.
 
+---
+
 ## Common Questions
 
 - **Is MCP a cloud service?** MCP servers can run locally on your computer or remotely as cloud services, depending on the use case and security requirements.
@@ -27,6 +31,8 @@ For example, an AI using MCP can perform tasks like "search our company database
 - **Does MCP replace other integration methods?** No. MCP complements existing tools like API plugins and retrieval-augmented generation. It provides a standardized protocol for tool interaction but doesn't replace specialized integration approaches.
 
 - **How is security handled?** Users control which MCP servers they connect to and what permissions those servers have. As with any tool that accesses data or services, use trusted sources and configure appropriate access controls.
+
+---
 
 ## MCP in Roo Code
 
@@ -39,6 +45,8 @@ Roo Code implements the Model Context Protocol to:
 
 MCP provides a standardized way for AI systems to interact with external tools and services, making complex integrations more accessible and consistent.
 
+---
+
 ## Learn More About MCP
 
 Ready to dig deeper? Check out these guides:
@@ -46,4 +54,4 @@ Ready to dig deeper? Check out these guides:
 - [MCP Overview](/features/mcp/overview) - A quick glance at the MCP documentation structure
 - [Using MCP in Roo Code](/features/mcp/using-mcp-in-roo) - Get started with MCP in Roo, including creating simple servers
 - [MCP vs API](/features/mcp/mcp-vs-api) - Technical advantages compared to traditional APIs
-- [STDIO & SSE Transports](/features/mcp/server-transports) - Local vs. hosted deployment models
+- [STDIO & Streamable HTTP & SSE Transports](/features/mcp/server-transports) - Local vs. hosted deployment models

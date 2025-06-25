@@ -4,12 +4,14 @@ sidebar_label: VS Code Language Model API
 
 # Using VS Code Language Model API With Roo Code
 
-Roo Code includes *experimental* support for the [VS Code Language Model API](https://code.visualstudio.com/api/language-extensions/language-model-access). This API allows extensions to provide access to language models directly within VS Code.  This means you can potentially use models from:
+Roo Code includes *experimental* support for the [VS Code Language Model API](https://code.visualstudio.com/api/extension-guides/language-model). This API allows extensions to provide access to language models directly within VS Code.  This means you can potentially use models from:
 
 *   **GitHub Copilot:** If you have a Copilot subscription and the extension installed.
 *   **Other VS Code Extensions:** Any extension that implements the Language Model API.
 
 **Important:** This integration is highly experimental and may not work as expected.  It is dependent on other extensions correctly implementing the VS Code Language Model API.
+
+---
 
 ## Prerequisites
 
@@ -17,6 +19,8 @@ Roo Code includes *experimental* support for the [VS Code Language Model API](ht
 *   **A Language Model Provider Extension:**  You need an extension that provides a language model.  Examples include:
     *   **GitHub Copilot:**  If you have a Copilot subscription, the GitHub Copilot and GitHub Copilot Chat extensions can provide models.
     *   **Other Extensions:**  Search the VS Code Marketplace for extensions that mention "Language Model API" or "lm".  There may be other experimental extensions available.
+
+---
 
 ## Configuration
 
@@ -28,6 +32,8 @@ Roo Code includes *experimental* support for the [VS Code Language Model API](ht
     *   `copilot - o1-ga`
     *   `copilot - gemini-2.0-flash`
 
+---
+
 ## Limitations
 
 *   **Experimental API:**  The VS Code Language Model API is still under development.  Expect changes and potential instability.
@@ -36,6 +42,8 @@ Roo Code includes *experimental* support for the [VS Code Language Model API](ht
 *   **No Direct Cost Control:**  You are subject to the pricing and terms of the extension providing the model.  Roo Code cannot directly track or limit costs.
 *   **GitHub Copilot Rate Limits:** When using the VS Code LM API with GitHub Copilot, be aware that GitHub may impose rate limits on Copilot usage. These limits are controlled by GitHub, not Roo Code.
 
+
+---
 
 ## Troubleshooting
 

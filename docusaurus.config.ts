@@ -5,6 +5,9 @@ import {
   DISCORD_URL,
   REDDIT_URL,
   TWITTER_URL,
+  BLUESKY_URL,
+  LINKEDIN_URL,
+  TIKTOK_URL,
   GITHUB_MAIN_REPO_URL,
   GITHUB_ISSUES_MAIN_URL,
   GITHUB_FEATURES_URL,
@@ -119,6 +122,10 @@ const config: Config = {
             from: ['/advanced-usage/experimental-features'],
           },
           {
+            to: '/features/concurrent-file-reads',
+            from: ['/features/experimental/concurrent-file-reads'],
+          },
+          {
             to: '/features/model-temperature',
             from: ['/advanced-usage/model-temperature'],
           },
@@ -131,8 +138,12 @@ const config: Config = {
             from: ['/advanced-usage/api-configuration-profiles'],
           },
           {
-            to: '/features/experimental/intelligent-context-condensing',
-            from: ['/features/experimental/intelligent-context-condensation'],
+            to: '/features/intelligent-context-condensing',
+            from: ['/features/experimental/intelligent-context-condensing', '/features/experimental/intelligent-context-condensation'],
+          },
+          {
+            to: '/advanced-usage/footgun-prompting',
+            from: ['/features/footgun-prompting'],
           },
           
           // MCP related redirects
@@ -240,7 +251,12 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: 'img/social-share.png',
+    colorMode: {
+      defaultMode: 'dark',
+      disableSwitch: false,
+      respectPrefersColorScheme: false,
+    },
+    image: 'img/social-share.jpg',
     navbar: {
       logo: {
         alt: 'Roo Code Logo',
@@ -249,19 +265,20 @@ const config: Config = {
       },
       items: [
         {
-          href: GITHUB_MAIN_REPO_URL,
-          label: 'GitHub',
-          position: 'right',
-        },
-        {
-          href: VSCODE_MARKETPLACE_URL,
-          label: 'Install Extension',
-          position: 'right',
+          type: 'search',
+          position: 'left',
         },
       ],
     },
     footer: {
       style: 'dark',
+      logo: {
+        alt: 'Roo Code Logo',
+        src: 'img/roo-code-logo-white.png',
+        srcDark: 'img/roo-code-logo-dark.png',
+        width: 120,
+        height: 24,
+      },
       links: [
         {
           title: 'Community',
@@ -277,6 +294,22 @@ const config: Config = {
             {
               label: 'Twitter',
               href: TWITTER_URL,
+            },
+            {
+              label: 'Bluesky',
+              href: BLUESKY_URL,
+            },
+            {
+              label: 'GitHub',
+              href: GITHUB_MAIN_REPO_URL,
+            },
+            {
+              label: 'LinkedIn',
+              href: LINKEDIN_URL,
+            },
+            {
+              label: 'TikTok',
+              href: TIKTOK_URL,
             },
           ],
         },

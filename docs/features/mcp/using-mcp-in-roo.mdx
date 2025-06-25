@@ -31,6 +31,8 @@ Model Context Protocol (MCP) extends Roo Code's capabilities by connecting to ex
 </div>
 <br />
 
+---
+
 ## Configuring MCP Servers
 
 MCP server configurations can be managed at two levels:
@@ -73,27 +75,27 @@ Both files use a JSON format with a `mcpServers` object containing named server 
   }
     ```
     *Example of MCP Server config in Roo Code (STDIO Transport)*
-  
+
   ### Understanding Transport Types
-  
-  MCP supports two transport types for server communication:
-  
+
+  MCP supports three transport types for server communication: STDIO for local servers, Streamable HTTP (recommended for new remote servers), and SSE (for legacy remote servers).
+
   #### STDIO Transport
-  
+
   Used for local servers running on your machine:
-  
+
   * Communicates via standard input/output streams
   * Lower latency (no network overhead)
   * Better security (no network exposure)
   * Simpler setup (no HTTP server needed)
   * Runs as a child process on your machine
-  
+
   For more in-depth information about how STDIO transport works, see [STDIO Transport](/features/mcp/server-transports#stdio-transport).
-  
+
   STDIO configuration parameters:
 
   *   `command` (required): The executable to run (e.g., `node`, `python`, `npx`, or an absolute path).
-  *   `args` (optional): An array of string arguments to pass to the command.
+  *   `args` (optional): An array of string arguments to pass to the command. You can reference system environment variables using `${env:VARIABLE_NAME}` syntax.
   *   `cwd` (optional): The working directory from which to launch the server process. If omitted, defaults to the first workspace folder path or the main process's working directory. Useful if the server script relies on relative paths.
   *   `env` (optional): An object containing environment variables to set for the server process.
   *   `alwaysAllow` (optional): An array of tool names from this server to automatically approve.
@@ -116,59 +118,134 @@ Both files use a JSON format with a `mcpServers` object containing named server 
     }
   }
   ```
-  
-  #### SSE Transport
-  
-  Used for remote servers accessed over HTTP/HTTPS:
-  
-  * Communicates via Server-Sent Events protocol
+
+  #### Using System Environment Variables in Arguments
+
+  You can reference system-level environment variables within the `args` array using the `${env:VARIABLE_NAME}` syntax. This allows you to pass sensitive information like API keys or tokens from your system environment without hardcoding them in your configuration:
+
+  ```json
+  {
+    "mcpServers": {
+      "github": {
+        "command": "docker",
+        "args": [
+          "run",
+          "-i",
+          "--rm",
+          "-e",
+          "GITHUB_PERSONAL_ACCESS_TOKEN=${env:GITHUB_PERSONAL_ACCESS_TOKEN}",
+          "ghcr.io/github/github-mcp-server"
+        ],
+        "alwaysAllow": [
+          "get_pull_request"
+        ]
+      }
+    }
+  }
+  ```
+
+  In this example, `${env:GITHUB_PERSONAL_ACCESS_TOKEN}` will be replaced with the value of the `GITHUB_PERSONAL_ACCESS_TOKEN` environment variable from your system. This is particularly useful when:
+  - Working with Docker containers that need environment variables passed through
+  - Keeping sensitive credentials out of your configuration files
+  - Using the same configuration across different environments with different credentials
+
+  **Note:** The environment variable must exist in your system environment for this to work. You can set system environment variables through your operating system's settings or shell configuration files (e.g., `.bashrc`, `.zshrc`, or Windows Environment Variables).
+#### Streamable HTTP Transport
+
+This is the **modern standard** for remote servers accessed over HTTP/HTTPS, offering more flexibility and replacing the legacy SSE transport for new implementations.
+
+*   Communicates via HTTP POST/GET to a single MCP endpoint
+*   Optionally uses Server-Sent Events (SSE) for streaming
+*   Can be hosted on a different machine
+*   Supports multiple client connections
+*   Requires network access
+*   Allows centralized deployment and management
+
+For more in-depth information about how Streamable HTTP transport works, see [Streamable HTTP Transport](/features/mcp/server-transports#streamable-http-transport).
+
+Streamable HTTP configuration parameters:
+
+*   `type` (required): Must be set to `"streamable-http"`.
+*   `url` (required): The full URL of the remote MCP server's single endpoint (e.g., `https://your-server.com/mcp`).
+*   `headers` (optional): An object containing custom HTTP headers to send with requests (e.g., for authentication tokens).
+*   `alwaysAllow` (optional): An array of tool names from this server to automatically approve.
+*   `disabled` (optional): Set to `true` to disable this server configuration.
+
+Streamable HTTP configuration example:
+```json
+{
+  "mcpServers": {
+    "modern-remote-server": {
+      "type": "streamable-http",
+      "url": "https://your-modern-server.com/api/mcp-endpoint",
+      "headers": {
+        "X-API-Key": "your-secure-api-key"
+      },
+      "alwaysAllow": ["newToolA", "newToolB"],
+      "disabled": false
+    }
+  }
+}
+```
+
+  #### SSE Transport (Legacy)
+
+  Used for older remote servers accessed over HTTP/HTTPS. **For new remote server implementations, [Streamable HTTP Transport](#streamable-http-transport) is recommended.**
+
+  * Communicates via Server-Sent Events protocol (typically requires separate endpoints for client-to-server and server-to-client communication)
   * Can be hosted on a different machine
   * Supports multiple client connections
   * Requires network access
   * Allows centralized deployment and management
-  
-  For more in-depth information about how SSE transport works, see [SSE Transport](/features/mcp/server-transports#sse-transport).
-  
-  SSE configuration parameters:
 
-  *   `url` (required): The full URL endpoint of the remote MCP server (e.g., `https://your-server.com/mcp`).
+  For more in-depth information about how legacy SSE transport works, see [SSE Transport (Legacy)](/features/mcp/server-transports#sse-transport-legacy).
+
+  SSE (Legacy) configuration parameters:
+
+  *   `type` (optional, but recommended for clarity): Should be set to `"sse"` if providing a `url` for an SSE server, to distinguish from Streamable HTTP. If `url` is present and `type` is omitted, Roo Code might try to infer, but explicit declaration is safer.
+  *   `url` (required): The base URL for the remote MCP server. For legacy SSE, this usually implies separate paths like `/events` (for SSE stream) and `/message` (for POST requests) will be derived or expected by the server.
   *   `headers` (optional): An object containing custom HTTP headers to send with requests (e.g., for authentication tokens).
   *   `alwaysAllow` (optional): An array of tool names from this server to automatically approve.
   *   `disabled` (optional): Set to `true` to disable this server configuration.
 
-  SSE configuration example:
+  SSE (Legacy) configuration example:
   ```json
   {
     "mcpServers": {
-      "remote-server": {
-        "url": "https://your-server-url.com/mcp",
+      "legacy-remote-server": {
+        "type": "sse", // Explicitly define as SSE
+        "url": "https://your-legacy-server-url.com/mcp-base", // Base URL
         "headers": {
-          "Authorization": "Bearer your-token" // Example: Authentication header
+          "Authorization": "Bearer your-legacy-token"
         },
-        "alwaysAllow": ["tool3"],
+        "alwaysAllow": ["oldToolX"],
         "disabled": false
       }
     }
   }
   ```
-  
+
   ## Enabling or Disabling MCP Servers
 
 Disabling your MCP Servers here will remove all MCP related logic and definitions from your system prompt, reducing your token usage. This will prevent Roo Code from connecting to any MCP servers, and the `use_mcp_tool` and `access_mcp_resource` tools will not be available. Check this off if you don't intend to use MCP Servers. This is on by default.
 
 1. Click the <Codicon name="server" /> icon in the top navigation of the Roo Code pane
-2. Check/Uncheck `Enable MCP Servers` 
+2. Check/Uncheck `Enable MCP Servers`
 
   <img src="/img/using-mcp-in-roo/using-mcp-in-roo-2.png" alt="Enable MCP Servers toggle" width="400" />
+
+---
 
 ## Enabling or Disabling MCP Server Creation
 
 Disabling your MCP Server Creation here will just remove the instructions from your system prompt that Roo Code uses to write MCP servers while not removing the context related to operating them. This reduces token usage. This is on by default.
 
 1. Click the <Codicon name="server" /> icon in the top navigation of the Roo Code pane
-2. Check/Uncheck `Enable MCP Server Creation` 
+2. Check/Uncheck `Enable MCP Server Creation`
 
   <img src="/img/using-mcp-in-roo/using-mcp-in-roo-3.png" alt="Enable MCP Server Creation toggle" width="400" />
+
+---
 
 ## How to Use Roo to Create an MCP Server
 
@@ -194,6 +271,8 @@ If you need a specific tool or capability that isn't available through existing 
 3.  **Outcome:** If successful, Roo will confirm the creation, and the new server and its tools will appear in your MCP server list, ready for use.
 
 This feature allows you to tailor Roo's capabilities by having it build the specific integrations you need directly from your requests. For a deeper look into the internal mechanics, see the [Tool Calling Mechanism](/advanced-usage/available-tools/tool-use-overview#tool-calling-mechanism).
+
+---
 
 ## Managing Individual MCP Servers
 
@@ -240,6 +319,8 @@ MCP tool auto-approval works on a per-tool basis and is disabled by default. To 
 
 When enabled, Roo Code will automatically approve this specific tool without prompting. Note that the global "Use MCP servers" setting takes precedence - if it's disabled, no MCP tools will be auto-approved.
 
+---
+
 ## Finding and Installing MCP Servers
 
 Roo Code does not come with any pre-installed MCP servers. You'll need to find and install them separately.
@@ -249,6 +330,8 @@ Roo Code does not come with any pre-installed MCP servers. You'll need to find a
 * **Build Your Own:** Create custom MCP servers using the SDK to extend Roo Code with your own tools
 
 For full SDK documentation, visit the [MCP GitHub repository](https://github.com/modelcontextprotocol/).
+
+---
 
 ## Using MCP Tools in Your Workflow
 
@@ -291,6 +374,8 @@ If Roo, guided by the tool descriptions, identifies a suitable tool, it will pro
 ### Maximizing Synergy with MCP Servers
 By investing effort in crafting detailed descriptions and potentially augmenting them with custom instructions, you significantly improve the synergy between Roo Code and your MCP servers. This unlocks their full potential for more reliable and efficient task completion.
 
+---
+
 ## Troubleshooting MCP Servers
 
 Common issues and solutions:
@@ -299,6 +384,8 @@ Common issues and solutions:
 * **Permission Errors:** Ensure proper API keys and credentials are configured in your `mcp_settings.json` (for global settings) or `.roo/mcp.json` (for project settings).
 * **Tool Not Available:** Confirm the server is properly implementing the tool and it's not disabled in settings
 * **Slow Performance:** Try adjusting the network timeout value for the specific MCP server
+
+---
 
 ## Platform-Specific MCP Configuration Examples
 
@@ -353,6 +440,8 @@ This configuration:
 - Runs the `@modelcontextprotocol/server-puppeteer` package which provides browser automation capabilities
 
 The same approach can be used for other MCP servers on Windows, adjusting the package name as needed for different server types.
+
+---
 
 ## Runtime Version Manager Configuration
 
