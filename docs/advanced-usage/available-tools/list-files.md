@@ -1,3 +1,17 @@
+---
+description: Learn how the list_files tool helps Roo Code explore project structures, list directories, and navigate codebases with recursive and filtered listing capabilities.
+keywords:
+  - list_files
+  - Roo Code tools
+  - directory listing
+  - file exploration
+  - project structure
+  - recursive listing
+  - codebase navigation
+  - VS Code AI
+image: /img/social-share.jpg
+---
+
 # list_files
 
 The `list_files` tool displays the files and directories within a specified location. It helps Roo understand your project structure and navigate your codebase effectively.

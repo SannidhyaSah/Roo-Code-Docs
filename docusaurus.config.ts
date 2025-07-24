@@ -23,8 +23,8 @@ import {
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'Roo Code Docs',
-  tagline: 'Roo Code Documentation',
+  title: 'Roo Code Documentation',
+  tagline: 'AI-powered autonomous coding agent for VS Code - Complete documentation, guides, and tutorials',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -33,6 +33,9 @@ const config: Config = {
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
+  // GitHub pages deployment config (if needed)
+  organizationName: 'RooCodeInc',
+  projectName: 'Roo-Code-Docs',
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
@@ -56,14 +59,10 @@ const config: Config = {
           showLastUpdateTime: true,
         },
         blog: false, // Disable blog feature
-        sitemap: {
-          lastmod: 'date',
-          priority: null,
-          changefreq: null,
-        },
         theme: {
           customCss: './src/css/custom.css',
         },
+        sitemap: false, // Disable the built-in sitemap plugin to avoid conflicts
       } satisfies Preset.Options,
     ],
   ],
@@ -92,6 +91,20 @@ const config: Config = {
         },
       ],
     ] : []),
+    [
+      '@docusaurus/plugin-sitemap',
+      {
+        changefreq: 'weekly',
+        priority: 0.5,
+        ignorePatterns: ['/tags/**'],
+        filename: 'sitemap.xml',
+        createSitemapItems: async (params) => {
+          const { defaultCreateSitemapItems, ...rest } = params;
+          const items = await defaultCreateSitemapItems(rest);
+          return items.filter((item) => !item.url.includes('/page/'));
+        },
+      },
+    ],
     [
       '@docusaurus/plugin-client-redirects',
       {
@@ -255,12 +268,21 @@ const config: Config = {
   ],
 
   themeConfig: {
+    // SEO metadata
+    metadata: [
+      {name: 'keywords', content: 'Roo Code, AI coding assistant, VS Code extension, autonomous coding agent, AI pair programmer, code generation, documentation'},
+      {name: 'twitter:card', content: 'summary_large_image'},
+      {name: 'twitter:site', content: '@roo_code'},
+      {name: 'twitter:creator', content: '@roo_code'},
+      {property: 'og:type', content: 'website'},
+      {property: 'og:locale', content: 'en_US'},
+    ],
     colorMode: {
       defaultMode: 'dark',
       disableSwitch: false,
       respectPrefersColorScheme: false,
     },
-    image: 'img/social-share.jpg',
+    image: 'img/social-share.jpg', // Default Open Graph image
     navbar: {
       logo: {
         alt: 'Roo Code Logo',

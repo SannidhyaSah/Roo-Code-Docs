@@ -1,3 +1,17 @@
+---
+description: Learn how to use Roo Code's specialized modes for different tasks. Switch between Code, Ask, Architect, Debug, and Orchestrator modes for optimal AI assistance.
+keywords:
+  - Roo Code modes
+  - Code mode
+  - Ask mode
+  - Architect mode
+  - Debug mode
+  - Orchestrator mode
+  - AI assistant modes
+  - mode switching
+image: /img/social-share.jpg
+---
+
 # Using Modes
 
 Modes in Roo Code are specialized personas that tailor the assistant's behavior to your current task. Each mode offers different capabilities, expertise, and access levels to help you accomplish specific goals.

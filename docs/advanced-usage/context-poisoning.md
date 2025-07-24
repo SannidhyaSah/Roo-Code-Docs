@@ -1,3 +1,14 @@
+---
+description: Learn about context poisoning in AI coding assistants, its symptoms, causes, and effective recovery strategies to maintain accurate AI responses.
+keywords:
+  - context poisoning
+  - AI accuracy
+  - Roo Code troubleshooting
+  - LLM context management
+  - session recovery
+image: /img/social-share.jpg
+---
+
 # Context Poisoning
 
 :::info

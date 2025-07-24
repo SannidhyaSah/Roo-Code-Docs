@@ -2,17 +2,55 @@
   <mode_overview>
     Automates creating release notes for new Roo Code versions. Fetches pull requests
     from GitHub, analyzes changes, and generates notes based on doc standards.
+    Can also generate Discord-formatted notes for existing release versions.
   </mode_overview>
 
   <initialization_steps>
     <step number="1">
-      <action>Receive version number from user</action>
+      <action>Analyze user request type</action>
       <details>
-        User provides the new version number (e.g., 3.20.3) to start.
+        Determine if user wants to:
+        1. Create new release notes from scratch (e.g., "Create release notes for 3.20.3")
+        2. Generate Discord format for existing release (e.g., "Discord release notes for 3.20.3")
       </details>
+      <decision_point>
+        <if_discord_only>
+          <condition>User requests Discord format for existing version(s)</condition>
+          <action>Skip to discord_only_workflow</action>
+        </if_discord_only>
+        <if_create_new>
+          <condition>User requests to create new release notes</condition>
+          <action>Continue with standard workflow</action>
+        </if_create_new>
+      </decision_point>
     </step>
     
     <step number="2">
+      <action>Initialize todo list for tracking progress</action>
+      <tool>update_todo_list</tool>
+      <details>
+        Create a comprehensive todo list to track all phases of release notes creation.
+      </details>
+      <example><![CDATA[
+<update_todo_list>
+<todos>
+[ ] Determine version range and previous version
+[ ] Fetch release dates from GitHub
+[ ] Search for merged PRs in date range
+[ ] Process each PR (create subtasks)
+[ ] Compile and organize PR findings
+[ ] Create release notes file
+[ ] Update index.md
+[ ] Update sidebars.ts
+[ ] Update combined release notes (if patch release)
+[ ] Ask if user wants to create a PR
+[ ] Generate Discord format (if requested)
+</todos>
+</update_todo_list>
+      ]]></example>
+    </step>
+    
+    <step number="3">
       <action>Determine version range</action>
       <tools>
         <tool>list_files - Find previous version in docs/update-notes</tool>
@@ -20,6 +58,7 @@
       <details>
         List files in docs/update-notes to find the last version file and set the range for fetching changes.
       </details>
+      <todo_update>Mark "Determine version range and previous version" as complete</todo_update>
     </step>
   </initialization_steps>
 
@@ -29,12 +68,13 @@
 			<steps>
 		             <step number="1">
 		                 <action>Check for user-provided PR list</action>
-		                 <details>If user gives a list of PR numbers, skip to 'process_each_pr' phase.</details>
+		                 <details>If user gives a list of PR numbers, skip to 'process_each_pr' phase. When skipping, use the current date or explicitly ask the user for the release date.</details>
 		             </step>
 				<step number="2">
 					<action>Fetch release dates</action>
 					<tool>gh api (get tag)</tool>
 					<details>Get commit dates for new and previous version tags to set a date range using gh CLI.</details>
+					<todo_update>Mark "Fetch release dates from GitHub" as complete</todo_update>
 				</step>
 				<step number="3">
 					<action>Search for merged PRs within date range</action>
@@ -43,6 +83,28 @@
 				        Use release date range to search for merged PRs.
 				        Query: `--state merged --search "merged:YYYY-MM-DD..YYYY-MM-DD"`
 				      </details>
+					<todo_update>Mark "Search for merged PRs in date range" as complete</todo_update>
+				</step>
+			</steps>
+		</phase>
+		<phase name="determine_release_date" optional="true">
+			<description>Determine the release date when user provides PR list directly.</description>
+			<when_to_use>Only when user provides a PR list instead of using GitHub date range search.</when_to_use>
+			<steps>
+				<step number="1">
+					<action>Check if user provided a date</action>
+					<details>
+						Look for date in user's message (e.g., "3.23.15" followed by a date like "2025-07-18").
+						If no date provided, use current date.
+					</details>
+				</step>
+				<step number="2">
+					<action>Validate date format</action>
+					<details>
+						Ensure date is in YYYY-MM-DD format (ISO 8601).
+						Common mistake: Confusing MM-DD with DD-MM.
+						Example: 2025-07-18 is July 18, not January 18.
+					</details>
 				</step>
 			</steps>
 		</phase>
@@ -57,6 +119,12 @@
 
 </content>
 					<details>Create an empty temp file that subtasks will append to.</details>
+				</step>
+				<step>
+					<action>Update todo list with PR processing status</action>
+					<tool>update_todo_list</tool>
+					<details>Update the main todo to show PR processing is in progress</details>
+					<todo_update>Mark "Process each PR (create subtasks)" as in progress [-]</todo_update>
 				</step>
 			</initialization>
 			<subtask_workflow>
@@ -104,6 +172,10 @@
 					After each subtask writes its findings, move to the next PR.
 				</completion_per_pr>
 			</subtask_workflow>
+			<phase_completion>
+				<action>Update todo after all PRs processed</action>
+				<todo_update>Mark "Process each PR (create subtasks)" as complete [x]</todo_update>
+			</phase_completion>
 		</phase>
 		<phase name="compile_final_release_notes">
 			<description>Read temporary analysis file and compile findings into the final release notes.</description>
@@ -119,6 +191,7 @@
 					<details>
 						Group PRs by category (Bug Fixes, QOL Improvements, etc.) based on the analysis.
 					</details>
+					<todo_update>Mark "Compile and organize PR findings" as complete</todo_update>
 				</step>
 				<step number="3">
 					<action>Format for release notes</action>
@@ -140,26 +213,113 @@
 				<step number="1">
 					<action>Create release notes file</action>
 					<details>
-            Create docs/update-notes/vX.Y.Z.mdx with correct title, date, and sections.
-          </details>
+				        Create docs/update-notes/vX.Y.Z.mdx with correct title, date, and sections.
+				      </details>
+					<todo_update>Mark "Create release notes file" as complete</todo_update>
 				</step>
 				<step number="2">
 					<action>Update index.md</action>
 					<details>
-            Add new release entry to the list.
-          </details>
+				        Add new release entry to the list.
+				      </details>
+					<todo_update>Mark "Update index.md" as complete</todo_update>
 				</step>
 				<step number="3">
 					<action>Update sidebars.ts</action>
 					<details>
-            Add new release to the "Update Notes" sidebar.
-          </details>
+				        Add new release to the "Update Notes" sidebar.
+				      </details>
+					<todo_update>Mark "Update sidebars.ts" as complete</todo_update>
 				</step>
 				<step number="4">
 					<action>Update combined release notes</action>
 					<details>
-            For patch releases, update the parent minor/major release file (e.g., update v3.20.mdx for v3.20.3).
-          </details>
+				        For patch releases, intelligently integrate changes into the parent minor/major release file.
+				        Follow the detailed workflow in 9_combined_notes_integration.xml to:
+				        - Read and parse the existing combined notes structure
+				        - Categorize new changes by section
+				        - Strip PR links and numbers
+				        - Merge items into appropriate existing sections
+				        - Maintain chronological order within sections
+				        - Handle edge cases like duplicate fixes
+				        Example: For v3.20.3, update v3.20.mdx by merging changes into existing sections.
+				      </details>
+					<todo_update>Mark "Update combined release notes (if patch release)" as complete</todo_update>
+				</step>
+			</steps>
+		</phase>
+		<phase name="review_and_refine">
+			<description>Iterative review process allowing users to refine release notes before creating a PR.</description>
+			<loop_structure>
+				<description>This phase loops until the user chooses to create a PR.</description>
+			</loop_structure>
+			<steps>
+				<step number="1">
+					<action>Ask if user wants to make changes</action>
+					<tool>ask_followup_question</tool>
+					<details>
+						Ask if the user wants to make any changes to the generated release notes before creating a PR.
+						This question will be repeated after each change until the user is satisfied.
+					</details>
+					<example><![CDATA[
+<ask_followup_question>
+<question>The release notes for version X.Y.Z have been created and all documentation files have been updated. Would you like to make any changes to the release notes before creating a PR?</question>
+<follow_up>
+<suggest>No, create a PR with the title "Release notes for vX.Y.Z"</suggest>
+<suggest>Yes, I'd like to make some changes to the release notes</suggest>
+<suggest>Show me the current release notes file</suggest>
+<suggest>Show me all changed files</suggest>
+</follow_up>
+</ask_followup_question>
+					]]></example>
+				</step>
+				<step number="2">
+					<action>Process user response</action>
+					<details>
+						Handle the user's response:
+						- If response contains "no, create a pr" (case-insensitive): Proceed to PR creation
+						- If "show me the current release notes": Display the vX.Y.Z.mdx file content
+						- If "show me all changed files": List all modified files
+						- Any other response: Treat as requested changes to implement
+					</details>
+					<decision_logic>
+						<condition>Response contains "no, create a pr"</condition>
+						<action>Exit loop and proceed to PR creation</action>
+						<condition>Any other response</condition>
+						<action>Implement requested changes and loop back to step 1</action>
+					</decision_logic>
+				</step>
+				<step number="3">
+					<action>Implement requested changes</action>
+					<details>
+						If user provides specific changes:
+						1. Parse the user's request
+						2. Apply the changes to the appropriate files
+						3. Confirm changes were made
+						4. Loop back to step 1 to ask again
+					</details>
+					<todo_update>Update "Ask if user wants to create a PR" to reflect ongoing review</todo_update>
+				</step>
+				<step number="4">
+					<action>Create PR when ready</action>
+					<details>
+						When user selects "No, create a PR":
+						1. Create PR using gh pr create with title "Release notes for vX.Y.Z"
+						2. Include a standard PR description
+						3. Mark the todo item as complete
+					</details>
+					<example><![CDATA[
+<execute_command>
+<command>gh pr create --repo RooCodeInc/Roo-Code --title "Release notes for vX.Y.Z" --body "This PR adds release notes for version X.Y.Z.
+
+## Changes
+- Created release notes file
+- Updated index.md
+- Updated sidebars.ts
+- Updated combined release notes (if applicable)"</command>
+</execute_command>
+					]]></example>
+					<todo_update>Mark "Ask if user wants to create a PR" as complete</todo_update>
 				</step>
 			</steps>
 		</phase>
@@ -199,12 +359,79 @@
 		</phase>
 	</main_workflow>
 
+	<discord_only_workflow>
+		<description>Direct workflow for generating Discord notes from existing release files.</description>
+		<trigger_patterns>
+			<pattern>Discord release notes for X.Y.Z</pattern>
+			<pattern>Generate Discord notes for vX.Y.Z</pattern>
+			<pattern>Discord format for versions X.Y.Z, A.B.C</pattern>
+			<pattern>Discord announcement for X.Y.Z</pattern>
+		</trigger_patterns>
+		
+		<steps>
+			<step number="1">
+				<action>Parse version numbers from request</action>
+				<details>
+					Extract one or more version numbers from the user's request.
+					Support formats: "3.20.3", "v3.20.3", multiple versions separated by commas.
+				</details>
+			</step>
+			
+			<step number="2">
+				<action>Verify release notes exist</action>
+				<details>
+					For each requested version, check if docs/update-notes/vX.Y.Z.mdx exists.
+				</details>
+				<tool>list_files</tool>
+				<error_handling>
+					<if_not_found>
+						<action>Inform user which versions don't have release notes</action>
+						<suggestion>Offer to create release notes first or skip missing versions</suggestion>
+					</if_not_found>
+				</error_handling>
+			</step>
+			
+			<step number="3">
+				<action>Process each version</action>
+				<details>
+					For each existing version file:
+					1. Read the release notes file
+					2. Apply Discord formatting transformations
+					3. Handle any compression requests
+					4. Generate output
+				</details>
+				<single_version>
+					<action>Generate Discord format directly</action>
+				</single_version>
+				<multiple_versions>
+					<action>Generate separate Discord format for each version</action>
+					<option>Combine into single announcement if requested</option>
+				</multiple_versions>
+			</step>
+			
+			<step number="4">
+				<action>Present Discord-formatted output</action>
+				<details>
+					Display the Discord-ready text for the user to copy.
+					Include any special formatting notes or suggestions.
+				</details>
+			</step>
+		</steps>
+		
+		<completion>
+			<action>Complete without creating PR or updating files</action>
+			<output>Discord-formatted text ready for posting</output>
+		</completion>
+	</discord_only_workflow>
+
 		<completion_criteria>
-    <criterion>Release notes file created with correct formatting.</criterion>
-    <criterion>All PRs analyzed and described by user benefit.</criterion>
-    <criterion>Index and sidebar files updated.</criterion>
-    <criterion>Combined release notes updated for patch releases.</criterion>
-    <criterion>Links and references are correct.</criterion>
-    <criterion>Final release notes include only items from the version's changelog.</criterion>
-  </completion_criteria>
+		  <criterion>Release notes file created with correct formatting.</criterion>
+		  <criterion>All PRs analyzed and described by user benefit.</criterion>
+		  <criterion>Index and sidebar files updated.</criterion>
+		  <criterion>Combined release notes updated for patch releases.</criterion>
+		  <criterion>Links and references are correct.</criterion>
+		  <criterion>Final release notes include only items from the version's changelog.</criterion>
+		  <criterion>User has reviewed release notes and confirmed readiness for PR creation.</criterion>
+		  <criterion>PR has been created (or user explicitly declined PR creation).</criterion>
+		</completion_criteria>
 </workflow_instructions>

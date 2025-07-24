@@ -1,4 +1,19 @@
 
+---
+description: Learn how search_files performs powerful regex searches across your codebase, finding patterns with context using Ripgrep for high-performance results.
+keywords:
+  - search_files
+  - Roo Code tools
+  - regex search
+  - code patterns
+  - Ripgrep
+  - multi-file search
+  - codebase search
+  - pattern matching
+  - VS Code AI
+image: /img/social-share.jpg
+---
+
 # search_files
 
 The `search_files` tool performs regex searches across multiple files within your project's workspace. For security, it cannot search outside the current workspace directory. It helps Roo locate specific code patterns, text, or other content throughout your codebase with contextual results.

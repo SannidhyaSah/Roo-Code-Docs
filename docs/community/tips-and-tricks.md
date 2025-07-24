@@ -1,3 +1,15 @@
+---
+description: A collection of productivity-boosting tips and tricks for Roo Code, including the powerful Handoff System for memory management
+keywords:
+  - roo code tips
+  - productivity tricks
+  - handoff system
+  - memory management
+  - Michaelzag
+  - LLM performance optimization
+image: /img/social-share.jpg
+---
+
 # Roo Code Tips & Tricks by Michaelzag
 
 [View Project on GitHub](https://github.com/Michaelzag/RooCode-Tips-Tricks)

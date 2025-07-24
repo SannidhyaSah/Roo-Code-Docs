@@ -1,4 +1,12 @@
 ---
+description: Learn how suggested responses in Roo Code help you quickly answer follow-up questions with pre-formulated options, speeding up your workflow.
+keywords:
+  - suggested responses
+  - follow-up questions
+  - quick answers
+  - workflow optimization
+  - ask_followup_question tool
+image: /img/social-share.jpg
 sidebar_label: Suggested Responses
 ---
 

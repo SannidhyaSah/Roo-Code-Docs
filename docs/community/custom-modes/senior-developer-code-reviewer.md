@@ -1,3 +1,16 @@
+---
+description: A technical architect mode for high-level code reviews focused on architectural impact, scalability, security, and long-term maintainability.
+keywords:
+  - code review
+  - senior developer
+  - architecture review
+  - system design
+  - security analysis
+  - performance optimization
+  - Roo Code custom mode
+image: /img/social-share.jpg
+---
+
 # Senior Developer Code Reviewer by jsonify
 
 [View Author on GitHub](https://github.com/jsonify)

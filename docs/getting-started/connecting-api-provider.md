@@ -1,5 +1,15 @@
 ---
 sidebar_label: Connecting To AI Provider
+description: Learn how to connect Roo Code to AI providers like Anthropic Claude, OpenAI, and OpenRouter. Step-by-step guide for API key setup and configuration.
+keywords:
+  - Roo Code API key
+  - Claude API
+  - OpenAI API
+  - OpenRouter
+  - Anthropic API
+  - AI provider setup
+  - API configuration
+image: /img/social-share.jpg
 ---
 import KangarooIcon from '@site/src/components/KangarooIcon';
 

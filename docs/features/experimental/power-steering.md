@@ -1,5 +1,15 @@
 ---
 sidebar_label: 'Power Steering'
+description: 'Improve Roo Code''s response consistency with Power Steering. This experimental feature reinforces mode definitions and custom instructions for better adherence to assigned roles.'
+keywords:
+  - power steering
+  - LLM consistency
+  - mode adherence
+  - custom instructions
+  - experimental feature
+  - token optimization
+  - role definition
+image: /img/social-share.jpg
 ---
 import Codicon from '@site/src/components/Codicon';
 

@@ -1,5 +1,16 @@
 ---
 sidebar_label: OpenAI Compatible
+description: Use Roo Code with any OpenAI-compatible API provider including Perplexity, Together AI, Anyscale, and custom endpoints.
+keywords:
+  - OpenAI compatible
+  - Roo Code
+  - API integration
+  - custom endpoints
+  - Together AI
+  - Perplexity
+  - Anyscale
+  - model configuration
+image: /img/social-share.jpg
 ---
 
 # Using OpenAI Compatible Providers With Roo Code

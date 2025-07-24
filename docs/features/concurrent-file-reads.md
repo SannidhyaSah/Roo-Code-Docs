@@ -1,4 +1,13 @@
 ---
+description: Learn how Roo Code's Concurrent File Reads feature speeds up development by reading up to 100 files simultaneously for better context understanding.
+keywords:
+  - concurrent file reads
+  - multi-file reads
+  - batch file reading
+  - context loading
+  - workspace efficiency
+  - file operations
+image: /img/social-share.jpg
 sidebar_label: 'Multi-File Reads'
 ---
 

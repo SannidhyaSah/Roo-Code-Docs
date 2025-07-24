@@ -2,6 +2,7 @@
   <overview>
     A mode for creating and maintaining release notes for the Roo Code extension.
     It automates the workflow from gathering PR info to generating documentation.
+    Also supports generating Discord-formatted announcements from existing release notes.
   </overview>
 
   <key_features>
@@ -11,6 +12,9 @@
     <feature>Consistent formatting enforcement.</feature>
     <feature>Subtask-based PR processing.</feature>
     <feature>Contributor acknowledgment (authors and issue reporters).</feature>
+    <feature>Direct Discord formatting for existing releases.</feature>
+    <feature>Multi-version Discord announcement support.</feature>
+    <feature>Intelligent combining of multiple release notes into unified Discord announcements.</feature>
   </key_features>
 
   <workflow_summary>
@@ -38,12 +42,26 @@
 
   <operating_modes>
     <mode type="main">
-      <trigger>User requests release notes for a version.</trigger>
+      <trigger>User requests to create release notes for a version.</trigger>
       <behavior>Full workflow from PR discovery to documentation.</behavior>
+      <examples>
+        <example>Create release notes for 3.23.14</example>
+        <example>Generate release notes for version 3.23.14</example>
+      </examples>
+    </mode>
+    <mode type="discord_only">
+      <trigger>User requests Discord format for existing version(s).</trigger>
+      <behavior>Reads existing release notes and converts to Discord format.</behavior>
+      <examples>
+        <example>Discord release notes for 3.23.14</example>
+        <example>Generate Discord format for v3.23.14, v3.23.15</example>
+        <example>Discord announcement for 3.23.14</example>
+        <example>Combine Discord release notes for 3.23.14 and 3.23.15</example>
+      </examples>
     </mode>
     <mode type="subtask">
-      <trigger>Message starts with "Investigate PR #".</trigger>
-      <behavior>Single PR investigation, appends to temp file.</behavior>
+      <trigger>Message starts with "Investigate PR #" or "Generate Discord-formatted".</trigger>
+      <behavior>Single PR investigation or Discord formatting subtask.</behavior>
     </mode>
   </operating_modes>
 
@@ -59,22 +77,27 @@
     </permission>
     <permission>
       <group>command</group>
-      <description>Command execution for workflow automation.</description>
-    </permission>
-    <permission>
-      <group>mcp</group>
-      <description>Access to GitHub MCP tools.</description>
+      <description>Command execution for workflow automation and GitHub CLI.</description>
     </permission>
   </file_permissions>
 
   <usage_instructions>
     <main_workflow>
-      <instruction>User provides a version number.</instruction>
+      <instruction>User provides a version number to create new release notes.</instruction>
       <instruction>Mode determines previous version, fetches and analyzes all PRs in range.</instruction>
       <instruction>Creates subtasks to investigate each PR.</instruction>
       <instruction>Subtasks document findings in temp_pr_analysis.md.</instruction>
       <instruction>Mode compiles findings into release notes and updates doc files.</instruction>
     </main_workflow>
+    <discord_only_workflow>
+      <instruction>User requests Discord format for one or more existing versions.</instruction>
+      <instruction>Mode checks if release note files exist.</instruction>
+      <instruction>Reads existing files and applies Discord formatting.</instruction>
+      <instruction>Outputs Discord-ready text without creating files.</instruction>
+      <instruction>Supports multiple versions in a single request.</instruction>
+      <instruction>Can combine multiple versions into a unified announcement with version indicators.</instruction>
+      <instruction>Automatically detects when to combine consecutive patch versions.</instruction>
+    </discord_only_workflow>
     <subtask_workflow>
       <instruction>Receives "Investigate PR #X" message.</instruction>
       <instruction>Fetches PR/issue details, identifies contributors.</instruction>

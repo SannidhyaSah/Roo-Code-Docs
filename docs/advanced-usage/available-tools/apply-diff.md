@@ -1,3 +1,16 @@
+---
+description: Master the apply_diff tool for making surgical code changes using fuzzy matching and line hints in Roo Code with multi-file support.
+keywords:
+  - apply_diff
+  - file editing
+  - code modifications
+  - fuzzy matching
+  - diff tool
+  - Roo Code tools
+  - multi-file edits
+image: /img/social-share.jpg
+---
+
 # apply_diff
 
 The `apply_diff` tool makes precise, surgical changes to files by specifying exactly what content to replace. It uses a sophisticated strategy for finding and applying changes while maintaining proper code formatting and structure.

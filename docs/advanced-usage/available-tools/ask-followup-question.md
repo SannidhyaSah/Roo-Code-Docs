@@ -1,3 +1,15 @@
+---
+description: Enable interactive communication in Roo Code with the ask_followup_question tool for gathering clarification and user preferences.
+keywords:
+  - ask_followup_question
+  - user interaction
+  - interactive communication
+  - Roo Code tools
+  - clarification
+  - user feedback
+image: /img/social-share.jpg
+---
+
 # ask_followup_question
 
 The `ask_followup_question` tool enables interactive communication by asking specific questions to gather additional information needed to complete tasks effectively.

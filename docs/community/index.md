@@ -1,3 +1,18 @@
+---
+description: Explore community projects that extend Roo Code's capabilities and discover custom modes shared by developers to enhance your workflow
+keywords:
+  - roo code community
+  - custom modes
+  - community projects
+  - sparc
+  - memory bank
+  - dynamic rules
+  - roo commander
+  - maestro
+  - roocabulary
+image: /img/social-share.jpg
+---
+
 # Index
 
 Welcome to the Roo Code community section! Here you'll find community projects that extend Roo Code's capabilities and a gallery of custom modes shared by other users to enhance your development workflow.

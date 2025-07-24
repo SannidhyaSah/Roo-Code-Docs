@@ -1,5 +1,17 @@
 ---
 sidebar_label: AWS Bedrock
+description: Use Amazon Bedrock with Roo Code to access Claude, Llama, and other foundation models through AWS. Configure credentials and VPC endpoints.
+keywords:
+  - aws bedrock
+  - amazon bedrock
+  - roo code
+  - api provider
+  - claude bedrock
+  - llama bedrock
+  - aws ai
+  - foundation models
+  - vpc endpoint
+image: /img/social-share.jpg
 ---
 
 # Using AWS Bedrock With Roo Code

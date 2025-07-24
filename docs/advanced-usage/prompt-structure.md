@@ -1,3 +1,14 @@
+---
+description: Understand the technical structure of prompts in Roo Code. Learn how messages are constructed, system prompts work, and optimize your interactions.
+keywords:
+  - prompt structure
+  - system prompt
+  - message flow
+  - technical documentation
+  - LLM communication
+image: /img/social-share.jpg
+---
+
 # Prompt Structure
 
 This page explains the technical structure of prompts in Roo Code - how messages are constructed and sent to the Large Language Model (LLM).

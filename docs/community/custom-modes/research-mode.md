@@ -1,3 +1,17 @@
+---
+description: Integrates Perplexity API and Lynx browser for autonomous research-augmented software engineering, enabling web search and page analysis within Roo Code.
+keywords:
+  - research mode
+  - Perplexity API
+  - Lynx browser
+  - web search
+  - code research
+  - documentation analysis
+  - MCP integration
+  - Roo Code custom mode
+image: /img/social-share.jpg
+---
+
 # ResearchMode by JamesCherished
 
 [View Project on GitHub](https://github.com/James-Cherished-Inc/roo-research-mode) | [View Author on GitHub](https://github.com/James-Cherished-Inc/)

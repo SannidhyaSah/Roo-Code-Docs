@@ -1,3 +1,14 @@
+---
+description: Learn how Roo Code integrates with your shell to execute commands. Troubleshooting guide for terminal issues and shell configuration.
+keywords:
+  - shell integration
+  - terminal commands
+  - command execution
+  - shell configuration
+  - troubleshooting
+image: /img/social-share.jpg
+---
+
 # Terminal Shell Integration
 
 Terminal Shell Integration is a key feature that enables Roo Code to execute commands in your terminal and intelligently process their output. This bidirectional communication between the AI and your development environment unlocks powerful automation capabilities.

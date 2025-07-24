@@ -1,3 +1,16 @@
+---
+description: Improve your AI interactions with Roo Code's Enhance Prompt feature. Automatically refine prompts for clarity, context, and better results with one click.
+keywords:
+  - enhance prompt
+  - prompt optimization
+  - AI prompts
+  - prompt engineering
+  - chat enhancement
+  - prompt refinement
+  - wand icon
+image: /img/social-share.jpg
+---
+
 # Enhance Prompt
 
 The "Enhance Prompt" feature in Roo Code helps you improve the quality and effectiveness of your prompts before sending them to the AI model.  By clicking the <Codicon name="wand" /> icon in the chat input, you can automatically refine your initial request, making it clearer, more specific, and more likely to produce the desired results.

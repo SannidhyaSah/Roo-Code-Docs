@@ -1,3 +1,15 @@
+---
+description: Learn how Roo Code uses tools to interact with your system. Understand file operations, command execution, browser control, and the approval workflow.
+keywords:
+  - Roo Code tools
+  - AI tools
+  - file operations
+  - command execution
+  - browser automation
+  - tool approval
+image: /img/social-share.jpg
+---
+
 # How Tools Work
 
 Roo Code uses tools to interact with your code and environment. These specialized helpers perform specific actions like reading files, making edits, running commands, or searching your codebase. Tools provide automation for common development tasks without requiring manual execution.

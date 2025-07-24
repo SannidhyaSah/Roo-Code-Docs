@@ -1,3 +1,14 @@
+---
+description: Learn strategies for effectively using Roo Code with large codebases. Manage context limits, optimize token usage, and handle complex refactoring tasks.
+keywords:
+  - large projects
+  - context management
+  - token optimization
+  - codebase refactoring
+  - Roo Code scalability
+image: /img/social-share.jpg
+---
+
 # Working with Large Projects
 
 Roo Code can be used with projects of any size, but large projects require some extra care to manage context effectively. Here are some tips for working with large codebases:

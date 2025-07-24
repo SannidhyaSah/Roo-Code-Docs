@@ -1,5 +1,13 @@
 ---
-title: Recommended MCP Servers
+description: Discover recommended MCP servers for Roo Code, including Context7. Learn how to install and configure MCP servers with step-by-step instructions.
+keywords:
+  - MCP servers
+  - Context7
+  - Roo Code MCP
+  - MCP installation
+  - MCP configuration
+  - recommended servers
+image: /img/social-share.jpg
 sidebar_label: Recommended MCP Servers
 ---
 

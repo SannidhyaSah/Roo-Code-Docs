@@ -1,4 +1,16 @@
 ---
+description: Configure Unbound in Roo Code for secure access to multiple LLMs through a single API. Enterprise-grade security and compliance features.
+keywords:
+  - Unbound
+  - Roo Code
+  - LLM gateway
+  - enterprise AI
+  - secure AI
+  - API provider
+  - Anthropic
+  - OpenAI
+  - compliance
+image: /img/social-share.jpg
 sidebar_label: Unbound
 ---
 

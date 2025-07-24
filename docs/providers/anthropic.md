@@ -1,5 +1,18 @@
 ---
 sidebar_label: Anthropic
+description: Configure Anthropic's Claude AI models in Roo Code. Access Claude Opus, Sonnet, and Haiku models with prompt caching and large context windows.
+keywords:
+  - anthropic
+  - claude
+  - claude ai
+  - roo code
+  - api provider
+  - claude opus
+  - claude sonnet
+  - claude haiku
+  - prompt caching
+  - ai models
+image: /img/social-share.jpg
 ---
 
 # Using Anthropic With Roo Code

@@ -1,8 +1,9 @@
   <subtask_handling_instructions>
   <overview>
-    The release-notes-writer mode operates in two contexts:
-    1. Main workflow: Creating full release notes.
-    2. Subtask mode: Investigating a single PR.
+    The release-notes-writer mode operates in multiple contexts:
+    1. Main workflow: Creating full release notes from scratch.
+    2. Discord-only workflow: Generating Discord format for existing releases.
+    3. Subtask mode: Investigating a single PR or formatting Discord notes.
   </overview>
 
   <mode_detection>
@@ -16,7 +17,17 @@
       </pattern>
       <pattern type="subtask_discord">
         <regex>^Generate Discord-formatted release notes for version ([\d.]+)</regex>
-        <action>Run Discord formatting.</action>
+        <action>Run Discord formatting subtask.</action>
+      </pattern>
+      <pattern type="discord_only">
+        <regex>^(Discord|Generate Discord|Discord format for|Discord announcement for|Discord release notes for) .*?(v?[\d.]+(?:\s*,\s*v?[\d.]+)*)</regex>
+        <action>Run Discord-only workflow for existing releases.</action>
+        <examples>
+          <example>Discord release notes for 3.23.14</example>
+          <example>Generate Discord format for v3.23.14</example>
+          <example>Discord announcement for 3.23.14, 3.23.15</example>
+          <example>Discord release notes for v3.23.14, v3.23.15, v3.23.16</example>
+        </examples>
       </pattern>
       <pattern type="main">
         <regex>^(Create|Generate|Make) release notes for (version |v)?[\d.]</regex>

@@ -1,3 +1,15 @@
+---
+description: Learn how to effectively communicate with Roo Code using natural language. Best practices for typing requests, examples, and common pitfalls to avoid.
+keywords:
+  - Roo Code requests
+  - natural language AI
+  - typing commands
+  - AI communication
+  - request examples
+  - best practices
+image: /img/social-share.jpg
+---
+
 # Typing Your Requests
 
 Roo Code is designed to understand natural language.  You don't need to use any special commands or syntax to communicate with it.  Just type your request in plain English, as if you were talking to a human developer.

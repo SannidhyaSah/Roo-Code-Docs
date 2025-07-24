@@ -1,3 +1,16 @@
+---
+description: Automate web interactions in Roo Code using the browser_action tool for navigation, clicking, typing, and visual feedback.
+keywords:
+  - browser_action
+  - web automation
+  - Puppeteer
+  - browser control
+  - Roo Code tools
+  - web testing
+  - screenshots
+image: /img/social-share.jpg
+---
+
 # browser_action
 
 The `browser_action` tool enables web automation and interaction via a Puppeteer-controlled browser. It allows Roo to launch browsers, navigate to websites, click elements, type text, and scroll pages with visual feedback through screenshots.

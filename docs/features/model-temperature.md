@@ -1,3 +1,15 @@
+---
+description: Learn how to adjust model temperature in Roo Code to optimize AI responses for different tasks, from precise code generation to creative brainstorming.
+keywords:
+  - model temperature
+  - AI settings
+  - output randomness
+  - code generation
+  - temperature control
+  - API configuration
+image: /img/social-share.jpg
+---
+
 import KangarooIcon from '@site/src/components/KangarooIcon';
 
 # Model Temperature

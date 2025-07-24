@@ -32,4 +32,22 @@
       <description>Do not include version numbers or phrases like "as of version X.Y" in general documentation. Version information belongs only in `docs/update-notes`.</description>
     </rule>
   </versioning>
+  <frontmatter>
+    <rule name="metadata">
+      <description>All pages must include frontmatter with description, keywords, and a social share image. The title will be automatically generated from the first H1 heading.</description>
+      <example>
+        <![CDATA[
+---
+description: A concise summary of the page content.
+keywords:
+  - relevant
+  - keywords
+  - for
+  - search
+image: /img/social-share.jpg
+---
+        ]]>
+      </example>
+    </rule>
+  </frontmatter>
 </docusaurus_conventions>

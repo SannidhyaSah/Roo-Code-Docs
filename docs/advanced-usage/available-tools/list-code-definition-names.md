@@ -1,3 +1,15 @@
+---
+description: Get a structural overview of your codebase by listing classes, functions, and interfaces with the list_code_definition_names tool.
+keywords:
+  - list_code_definition_names
+  - code structure
+  - code definitions
+  - Roo Code tools
+  - codebase overview
+  - Tree-sitter
+image: /img/social-share.jpg
+---
+
 # list_code_definition_names
 
 The `list_code_definition_names` tool provides a structural overview of your codebase by listing code definitions from source files at the top level of a specified directory. It helps Roo understand code architecture by displaying line numbers and definition snippets.

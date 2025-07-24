@@ -1,5 +1,13 @@
 ---
 sidebar_label: Your First Task
+description: Learn how to start your first task with Roo Code AI assistant. Step-by-step guide for beginners to understand the approval workflow and iterative process.
+keywords:
+  - Roo Code tutorial
+  - first task
+  - getting started
+  - AI coding assistant tutorial
+  - approval workflow
+image: /img/social-share.jpg
 ---
 import KangarooIcon from '@site/src/components/KangarooIcon';
 

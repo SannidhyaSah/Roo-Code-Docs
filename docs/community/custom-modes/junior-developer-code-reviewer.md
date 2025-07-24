@@ -1,3 +1,16 @@
+---
+description: A supportive mentor-reviewer mode that provides educational, encouraging code reviews focused on junior developers' growth and learning.
+keywords:
+  - code review
+  - junior developer
+  - mentorship
+  - educational feedback
+  - code learning
+  - best practices
+  - Roo Code custom mode
+image: /img/social-share.jpg
+---
+
 # Junior Developer Code Reviewer by jsonify
 
 [View Author on GitHub](https://github.com/jsonify)

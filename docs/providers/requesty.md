@@ -1,5 +1,16 @@
 ---
+description: Configure Requesty in Roo Code to access 150+ LLMs with cost optimizations, unified billing, and comprehensive usage tracking features.
+keywords:
+  - roo code
+  - requesty
+  - ai provider
+  - language models
+  - api configuration
+  - cost optimization
+  - usage tracking
+  - prompt caching
 sidebar_label: Requesty
+image: /img/social-share.jpg
 ---
 
 # Using Requesty With Roo Code

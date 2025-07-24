@@ -1,5 +1,17 @@
 ---
 sidebar_label: Ollama
+description: Set up Ollama with Roo Code to run open source language models locally for privacy, offline access, and cost-effective AI coding.
+keywords:
+  - Ollama
+  - local models
+  - Roo Code
+  - open source AI
+  - CodeLlama
+  - Qwen
+  - offline AI
+  - privacy
+  - context window configuration
+image: /img/social-share.jpg
 ---
 import KangarooIcon from '@site/src/components/KangarooIcon';
 

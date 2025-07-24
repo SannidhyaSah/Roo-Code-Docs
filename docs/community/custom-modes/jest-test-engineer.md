@@ -1,3 +1,16 @@
+---
+description: A specialized Roo Code mode for writing and maintaining Jest test suites with TypeScript support, focusing on TDD practices and test quality.
+keywords:
+  - Jest testing
+  - TDD
+  - test-driven development
+  - TypeScript testing
+  - Jest mocks
+  - test coverage
+  - Roo Code custom mode
+image: /img/social-share.jpg
+---
+
 # Jest Test Engineer by mrubens
 
 [View Author on GitHub](https://github.com/mrubens)

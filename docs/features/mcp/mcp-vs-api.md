@@ -1,5 +1,13 @@
 ---
-title: MCP vs API
+description: Learn the key differences between Model Context Protocol (MCP) and REST APIs. Understand why MCP is AI-native and how it enables stateful, contextual interactions.
+keywords:
+  - MCP vs API
+  - Model Context Protocol
+  - REST API comparison
+  - AI protocols
+  - stateful connections
+  - tool discovery
+image: /img/social-share.jpg
 sidebar_label: MCP vs API
 ---
 

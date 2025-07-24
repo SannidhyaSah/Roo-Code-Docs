@@ -1,3 +1,17 @@
+---
+description: Browse all Roo Code release notes and version updates. Find detailed changelogs, new features, bug fixes, and improvements for each version.
+keywords:
+  - roo code updates
+  - release notes
+  - version history
+  - changelog
+  - new features
+  - bug fixes
+  - improvements
+  - roo code versions
+image: /img/social-share.jpg
+---
+
 # Update Notes
 
 This section contains notes about recent updates to Roo Code, listed by version number.
@@ -5,6 +19,17 @@ This section contains notes about recent updates to Roo Code, listed by version 
 
 ## Version 3.23
 
+*   [3.23.17](/update-notes/v3.23.17) (2025-07-22)
+*   [3.23.16](/update-notes/v3.23.16) (2025-07-19)
+*   [3.23.15](/update-notes/v3.23.15) (2025-07-18)
+*   [3.23.14](/update-notes/v3.23.14) (2025-07-17)
+*   [3.23.13](/update-notes/v3.23.13) (2025-07-17)
+*   [3.23.12](/update-notes/v3.23.12) (2025-01-13)
+*   [3.23.11](/update-notes/v3.23.11) (2025-01-13)
+*   [3.23.10](/update-notes/v3.23.10) (2025-01-13)
+*   [3.23.9](/update-notes/v3.23.9) (2025-01-13)
+*   [3.23.8](/update-notes/v3.23.8) (2025-01-13)
+*   [3.23.7](/update-notes/v3.23.7) (2025-01-13)
 *   [3.23.6](/update-notes/v3.23.6) (2025-07-10)
 *   [3.23.5](/update-notes/v3.23.5) (2025-07-10)
 *   [3.23.4](/update-notes/v3.23.4) (2025-07-10)

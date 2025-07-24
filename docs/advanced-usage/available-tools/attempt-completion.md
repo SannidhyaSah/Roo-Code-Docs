@@ -1,3 +1,15 @@
+---
+description: Learn how the attempt_completion tool signals task completion, presents results, and enables iterative refinement in Roo Code.
+keywords:
+  - attempt_completion
+  - task completion
+  - result presentation
+  - Roo Code tools
+  - user feedback
+  - task summary
+image: /img/social-share.jpg
+---
+
 # attempt_completion
 
 The `attempt_completion` tool signals that Roo believes a task is complete and presents results to the user. It provides a summary of what was accomplished, optionally includes a command to demonstrate the result, and supports continued refinement through user feedback.

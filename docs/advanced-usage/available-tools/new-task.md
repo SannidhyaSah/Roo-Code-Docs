@@ -1,3 +1,18 @@
+---
+description: Discover how the new_task tool enables complex workflow management by creating subtasks with different modes, maintaining parent-child relationships for organized development.
+keywords:
+  - new_task
+  - Roo Code tools
+  - subtasks
+  - workflow management
+  - task hierarchy
+  - mode switching
+  - complex projects
+  - task organization
+  - VS Code AI
+image: /img/social-share.jpg
+---
+
 # new_task
 
 The `new_task` tool creates subtasks with specialized modes while maintaining a parent-child relationship. It breaks down complex projects into manageable pieces, each operating in the mode best suited for specific work.

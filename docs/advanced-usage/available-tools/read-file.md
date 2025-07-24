@@ -1,4 +1,19 @@
 
+---
+description: Explore the read_file tool's capabilities for examining file contents, supporting line ranges, PDF/DOCX extraction, and experimental multi-file concurrent reading.
+keywords:
+  - read_file
+  - Roo Code tools
+  - file reading
+  - concurrent reads
+  - line numbers
+  - PDF extraction
+  - DOCX support
+  - code analysis
+  - VS Code AI
+image: /img/social-share.jpg
+---
+
 # read_file
 
 The `read_file` tool examines the contents of files in a project. It allows Roo to understand code, configuration files, and documentation to provide better assistance.

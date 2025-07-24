@@ -1,3 +1,16 @@
+---
+description: Execute terminal commands in Roo Code for system operations, dependency installation, builds, and development workflows.
+keywords:
+  - execute_command
+  - CLI commands
+  - terminal
+  - system operations
+  - Roo Code tools
+  - command execution
+  - shell integration
+image: /img/social-share.jpg
+---
+
 # execute_command
 
 The `execute_command` tool runs CLI commands on the user's system. It allows Roo to perform system operations, install dependencies, build projects, start servers, and execute other terminal-based tasks needed to accomplish user objectives.

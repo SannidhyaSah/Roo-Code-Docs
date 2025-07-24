@@ -1,3 +1,19 @@
+---
+description: Understand how switch_mode enables seamless transitions between Code, Architect, Ask, and Debug modes for specialized task handling in Roo Code.
+keywords:
+  - switch_mode
+  - Roo Code tools
+  - mode switching
+  - operational modes
+  - Code mode
+  - Architect mode
+  - Debug mode
+  - Ask mode
+  - task transitions
+  - VS Code AI
+image: /img/social-share.jpg
+---
+
 # switch_mode
 
 The `switch_mode` tool enables Roo to change between different operational modes, each with specialized capabilities for specific types of tasks. This allows seamless transitions between modes like Code, Architect, Ask, or Debug when the current task requires different expertise.

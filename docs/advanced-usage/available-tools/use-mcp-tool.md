@@ -1,3 +1,18 @@
+---
+description: Discover how use_mcp_tool integrates external MCP servers to extend Roo Code with specialized tools, domain-specific functionality, and external services.
+keywords:
+  - use_mcp_tool
+  - MCP tools
+  - Model Context Protocol
+  - external tools
+  - Roo Code integration
+  - MCP servers
+  - domain tools
+  - tool extension
+  - VS Code AI
+image: /img/social-share.jpg
+---
+
 # use_mcp_tool
 
 The `use_mcp_tool` tool enables interaction with external tools provided by connected Model Context Protocol (MCP) servers. It extends Roo's capabilities with domain-specific functionality through a standardized protocol.

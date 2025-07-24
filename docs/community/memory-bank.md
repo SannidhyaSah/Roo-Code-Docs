@@ -1,3 +1,15 @@
+---
+description: Maintain context across Roo Code sessions with a structured memory system that ensures deep project understanding and continuity
+keywords:
+  - memory bank
+  - roo code context
+  - persistent memory
+  - session continuity
+  - GreatScottyMac
+  - AI context management
+image: /img/social-share.jpg
+---
+
 # Memory Bank Project by GreatScottyMac
 
 [View Project on GitHub](https://github.com/GreatScottyMac/roo-code-memory-bank)

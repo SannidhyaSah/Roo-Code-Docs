@@ -1,3 +1,16 @@
+---
+description: Find answers to common questions about Roo Code, including setup, usage, troubleshooting, and advanced features. Get help with API keys, modes, and more.
+keywords:
+  - Roo Code FAQ
+  - frequently asked questions
+  - troubleshooting
+  - API setup
+  - custom modes
+  - MCP
+  - local models
+image: /img/social-share.jpg
+---
+
 import KangarooIcon from '@site/src/components/KangarooIcon';
 
 # Frequently Asked Questions

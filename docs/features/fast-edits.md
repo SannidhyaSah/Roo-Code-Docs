@@ -1,3 +1,16 @@
+---
+description: Discover how Roo Code's Fast Edits feature uses diffs for faster, safer file modifications. Learn about match precision and configuration options.
+keywords:
+  - fast edits
+  - diff editing
+  - file modifications
+  - apply diff
+  - match precision
+  - editing efficiency
+  - truncation prevention
+image: /img/social-share.jpg
+---
+
 # Diff/Fast Edits
 
 :::info Default Setting

@@ -1,4 +1,13 @@
 ---
+description: Master keyboard navigation in Roo Code with customizable shortcuts, command execution, and prompt history navigation for efficient coding workflows.
+keywords:
+  - keyboard shortcuts
+  - keyboard navigation
+  - roo.acceptInput
+  - prompt history
+  - accessibility
+  - vim compatibility
+image: /img/social-share.jpg
 sidebar_label: Keyboard Navigation
 ---
 

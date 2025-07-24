@@ -1,3 +1,15 @@
+---
+description: Insert new content at specific line numbers in existing files without modifying original content using Roo Code's insert_content tool.
+keywords:
+  - insert_content
+  - file insertion
+  - add content
+  - Roo Code tools
+  - code insertion
+  - file editing
+image: /img/social-share.jpg
+---
+
 # insert_content
 
 The `insert_content` tool adds new lines of content into an existing file without modifying the original content. It's ideal for inserting code blocks, configuration entries, or log lines at specific locations.

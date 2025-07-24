@@ -1,5 +1,16 @@
 ---
 sidebar_label: DeepSeek
+description: Configure DeepSeek's chat and reasoning models in Roo Code. Access deepseek-chat and deepseek-reasoner for coding and complex reasoning tasks.
+keywords:
+  - deepseek
+  - deepseek chat
+  - deepseek reasoner
+  - roo code
+  - api provider
+  - reasoning ai
+  - coding ai
+  - deepseek r1
+image: /img/social-share.jpg
 ---
 
 # Using DeepSeek With Roo Code

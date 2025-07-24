@@ -1,3 +1,18 @@
+---
+description: Explore write_to_file for creating new files or replacing content with interactive diff view approval, ensuring safe file operations in Roo Code.
+keywords:
+  - write_to_file
+  - Roo Code tools
+  - file creation
+  - file writing
+  - diff view
+  - content approval
+  - file operations
+  - interactive editing
+  - VS Code AI
+image: /img/social-share.jpg
+---
+
 # write_to_file
 
 The `write_to_file` tool creates new files or completely replaces existing file content with an interactive approval process. It provides a diff view for reviewing changes before they're applied.

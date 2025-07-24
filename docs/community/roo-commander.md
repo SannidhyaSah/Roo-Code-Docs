@@ -1,3 +1,15 @@
+---
+description: Sophisticated custom modes for Roo Code that manage software projects with a virtual development team and structured workflows
+keywords:
+  - roo commander
+  - multi-agent development
+  - custom modes
+  - project management
+  - jezweb
+  - virtual team orchestration
+image: /img/social-share.jpg
+---
+
 # Roo Commander Project by jezweb
 
 [View Project on GitHub](https://github.com/jezweb/roo-commander)

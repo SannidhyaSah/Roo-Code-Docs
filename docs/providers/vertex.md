@@ -1,4 +1,16 @@
 ---
+description: Access Google Gemini and Anthropic Claude models through GCP Vertex AI in Roo Code. Configure authentication and start using enterprise AI.
+keywords:
+  - Vertex AI
+  - GCP
+  - Google Cloud
+  - Roo Code
+  - Gemini
+  - Claude
+  - AI models
+  - machine learning
+  - cloud AI
+image: /img/social-share.jpg
 sidebar_label: GCP Vertex AI
 ---
 

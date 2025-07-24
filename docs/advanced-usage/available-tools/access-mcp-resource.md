@@ -1,3 +1,16 @@
+---
+description: Learn how the access_mcp_resource tool retrieves data from Model Context Protocol servers for additional context in Roo Code tasks.
+keywords:
+  - access_mcp_resource
+  - MCP
+  - Model Context Protocol
+  - MCP resources
+  - Roo Code tools
+  - context retrieval
+  - API integration
+image: /img/social-share.jpg
+---
+
 # access_mcp_resource
 
 The `access_mcp_resource` tool retrieves data from resources exposed by connected Model Context Protocol (MCP) servers. It allows Roo to access files, API responses, documentation, or system information that provides additional context for tasks.

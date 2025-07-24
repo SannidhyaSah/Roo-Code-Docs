@@ -1,3 +1,16 @@
+---
+description: An orchestrator mode that manages complex workflows by delegating subtasks to specialized modes, coordinating multi-step projects efficiently.
+keywords:
+  - orchestrator
+  - workflow automation
+  - task delegation
+  - subtasks
+  - boomerang mode
+  - complex workflows
+  - Roo Code custom mode
+image: /img/social-share.jpg
+---
+
 # Orchestrator by mrubens
 
 [View Author on GitHub](https://github.com/mrubens)

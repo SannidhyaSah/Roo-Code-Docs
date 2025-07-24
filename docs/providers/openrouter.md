@@ -1,5 +1,16 @@
 ---
+description: Configure OpenRouter in Roo Code to access 100+ language models from various providers through a single API with automatic model discovery.
+keywords:
+  - roo code
+  - openrouter
+  - ai provider
+  - language models
+  - api configuration
+  - model selection
+  - prompt caching
+  - byok
 sidebar_label: OpenRouter
+image: /img/social-share.jpg
 ---
 
 # Using OpenRouter With Roo Code

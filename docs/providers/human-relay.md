@@ -1,3 +1,18 @@
+---
+sidebar_label: Human Relay
+description: Use ChatGPT, Claude, or other web-based AI models in Roo Code without API keys. Manually relay messages between Roo Code and web interfaces.
+keywords:
+  - human relay
+  - roo code
+  - no api key
+  - chatgpt web
+  - claude web
+  - manual relay
+  - web ai models
+  - free ai access
+image: /img/social-share.jpg
+---
+
 # Human Relay Provider
 
 The Human Relay provider allows you to use Roo Code with web-based AI models like ChatGPT or Claude without needing an API key. Instead, it relies on you to manually relay messages between Roo Code and the AI's web interface.

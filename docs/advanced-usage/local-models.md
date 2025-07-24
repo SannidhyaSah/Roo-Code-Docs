@@ -1,3 +1,16 @@
+---
+description: Learn how to run Roo Code with local AI models using Ollama and LM Studio. Complete setup guide for offline AI coding assistance.
+keywords:
+  - local models
+  - Ollama
+  - LM Studio
+  - offline AI
+  - local LLM
+  - self-hosted AI
+  - privacy-focused AI
+image: /img/social-share.jpg
+---
+
 # Using Local Models
 
 Roo Code supports running language models locally on your own machine using [Ollama](https://ollama.com/) and [LM Studio](https://lmstudio.ai/).  This offers several advantages:

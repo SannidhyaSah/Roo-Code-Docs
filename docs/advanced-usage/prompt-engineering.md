@@ -1,3 +1,14 @@
+---
+description: Master the art of writing effective prompts for Roo Code. Learn principles, techniques, and examples to get better AI coding assistance results.
+keywords:
+  - prompt engineering
+  - AI prompts
+  - effective communication
+  - Roo Code tips
+  - custom instructions
+image: /img/social-share.jpg
+---
+
 # Prompt Engineering Tips
 
 Prompt engineering is the art of crafting effective instructions for AI models like Roo Code.  Well-written prompts lead to better results, fewer errors, and a more efficient workflow.

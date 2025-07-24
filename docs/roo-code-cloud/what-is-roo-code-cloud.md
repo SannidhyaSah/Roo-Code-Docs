@@ -1,3 +1,15 @@
+---
+description: Discover Roo Code Cloud, the web platform that extends your Roo Code extension with cloud features for collaboration, persistence, and analytics.
+keywords:
+  - Roo Code Cloud
+  - AI development platform
+  - cloud features
+  - collaboration
+  - task history
+  - usage analytics
+image: /img/social-share.jpg
+---
+
 # What is Roo Code Cloud?
 
 Roo Code Cloud is a web-based platform that extends your Roo Code extension with cloud-powered features for enhanced collaboration, data persistence, and usage tracking. By connecting your local Roo Code extension to the cloud, you unlock powerful capabilities that transform how you work with AI-assisted development.

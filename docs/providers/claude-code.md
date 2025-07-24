@@ -1,5 +1,16 @@
 ---
 sidebar_label: Claude Code
+description: Access Claude AI models through the official CLI in Roo Code. No API keys needed, supports advanced reasoning and transparent cost tracking.
+keywords:
+  - claude code
+  - claude cli
+  - roo code
+  - api provider
+  - claude max
+  - no api key
+  - claude reasoning
+  - claude thinking mode
+image: /img/social-share.jpg
 ---
 
 # Claude Code Provider

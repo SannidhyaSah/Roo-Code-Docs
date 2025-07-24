@@ -1,3 +1,15 @@
+---
+description: Define and manage project-specific rules dynamically in Roo Code by simply writing RULE/NORULE commands in your messages
+keywords:
+  - roo code dynamic rules
+  - project rules
+  - clinerules
+  - rule management
+  - cannuri
+  - langmem inspired
+image: /img/social-share.jpg
+---
+
 # Roo Code Dynamic Rules by cannuri
 
 [View Project on GitHub](https://github.com/cannuri/roo-code-dynamic-rules)

@@ -1,3 +1,14 @@
+---
+description: Learn how to use the Roo Code chat interface effectively. Understand the layout, features, and best practices for communicating with your AI coding assistant.
+keywords:
+  - Roo Code chat interface
+  - AI assistant interaction
+  - chat features
+  - user interface
+  - VS Code extension
+image: /img/social-share.jpg
+---
+
 import KangarooIcon from '@site/src/components/KangarooIcon';
 
 # The Chat Interface

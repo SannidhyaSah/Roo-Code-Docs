@@ -1,3 +1,16 @@
+---
+description: Orchestrate automated development workflows with SPARC's structured framework using Roo Code Boomerang Tasks for efficient coding
+keywords:
+  - sparc
+  - roo code workflows
+  - boomerang tasks
+  - agentic development
+  - ruvnet
+  - automated coding
+  - workflow orchestration
+image: /img/social-share.jpg
+---
+
 # SPARC by ruvnet
 
 [View Project on GitHub](https://github.com/ruvnet/rUv-dev)

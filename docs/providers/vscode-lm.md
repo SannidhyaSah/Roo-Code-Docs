@@ -1,4 +1,14 @@
 ---
+description: Use GitHub Copilot and other VS Code language models in Roo Code through the experimental Language Model API integration.
+keywords:
+  - VS Code LM API
+  - Language Model API
+  - GitHub Copilot
+  - Roo Code
+  - VS Code extensions
+  - AI models
+  - experimental features
+image: /img/social-share.jpg
 sidebar_label: VS Code Language Model API
 ---
 

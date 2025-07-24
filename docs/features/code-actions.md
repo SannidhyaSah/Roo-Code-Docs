@@ -1,3 +1,16 @@
+---
+description: Access Roo Code's AI assistance directly in your editor with Code Actions. Get instant fixes, explanations, and improvements through VSCode's lightbulb system.
+keywords:
+  - code actions
+  - quick fixes
+  - lightbulb menu
+  - AI assistance
+  - VSCode integration
+  - code improvements
+  - error fixes
+image: /img/social-share.jpg
+---
+
 # Code Actions
 
 Code Actions provide instant access to Roo Code's AI assistance directly within your code editor through VSCode's lightbulb (quick fix) system. This context-aware feature automatically detects relevant code situations and offers appropriate AI-powered actions without requiring you to switch to the chat interface.
@@ -40,6 +53,8 @@ The lightbulb menu intelligently shows different actions based on your code's cu
 - **Explain Code** - Get detailed explanations of what the code does
 - **Improve Code** - Receive optimization suggestions and best practices
 - **Add to Context** - Add the code to Roo's context for further work
+
+For more details on how diagnostics are integrated with Code Actions, see [Diagnostics Integration](/features/diagnostics-integration).
 
 ### Add to Context Deep Dive
 
@@ -124,7 +139,7 @@ You can customize the prompts used for each Code Action by modifying the "Suppor
 3. **Edit the Prompts:** Modify the text in the text area for the prompt you want to customize. The prompts use placeholders in the format `${placeholder}`:
     - `${filePath}` - The path of the current file
     - `${selectedText}` - The currently selected text
-    - `${diagnostics}` - Any error or warning messages (for Fix Code)
+    - `${diagnostics}` - Any error or warning messages (for Fix Code) - see [Diagnostics Integration](/features/diagnostics-integration) for details
 4. **Click "Done":** Save your changes.
 
 ### Example Prompt Template
@@ -135,3 +150,10 @@ ${selectedText}
 ```
 
 By using Roo Code's Code Actions, you can quickly get AI-powered assistance directly within your coding workflow. This can save you time and help you write better code.
+
+---
+
+## Related Features
+
+- [Diagnostics Integration](/features/diagnostics-integration) - Learn how Roo Code integrates with VSCode's Problems panel
+- [Context Mentions](/basic-usage/context-mentions) - Discover other ways to provide context to Roo Code

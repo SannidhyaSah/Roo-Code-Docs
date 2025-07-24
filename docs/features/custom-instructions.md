@@ -1,3 +1,14 @@
+---
+description: Learn how to use custom instructions to tailor Roo Code's behavior to your preferences, coding style, and project requirements.
+keywords:
+  - custom instructions
+  - personalization
+  - AI customization
+  - coding preferences
+  - project rules
+image: /img/social-share.jpg
+---
+
 # Custom Instructions
 
 Custom Instructions allow you to personalize how Roo behaves, providing specific guidance that shapes responses, coding style, and decision-making processes.

@@ -1,3 +1,16 @@
+---
+description: An agile requirements specialist mode for creating clear, valuable user stories with structured templates and comprehensive acceptance criteria.
+keywords:
+  - user stories
+  - agile development
+  - requirements gathering
+  - acceptance criteria
+  - story writing
+  - agile methodology
+  - Roo Code custom mode
+image: /img/social-share.jpg
+---
+
 # User Story Creator by jsonify
 
 [View Author on GitHub](https://github.com/jsonify)

@@ -1,3 +1,18 @@
+---
+description: Master the search_and_replace tool for finding and replacing text or regex patterns in files, with line range support and interactive diff approval.
+keywords:
+  - search_and_replace
+  - Roo Code tools
+  - find replace
+  - regex patterns
+  - text replacement
+  - code refactoring
+  - diff view
+  - line ranges
+  - VS Code AI
+image: /img/social-share.jpg
+---
+
 # search_and_replace
 
 The `search_and_replace` tool finds and replaces text within a file, supporting both literal strings and regular expression patterns. It allows for targeted replacements across multiple locations, optionally within specific line ranges.

@@ -1,5 +1,16 @@
 ---
 sidebar_label: Chutes AI
+description: Configure Chutes AI with Roo Code for free access to various large language models. Get started with open-source and proprietary AI models.
+keywords:
+  - chutes ai
+  - free llm
+  - roo code
+  - api provider
+  - free ai models
+  - language models
+  - llm api
+  - open source models
+image: /img/social-share.jpg
 ---
 
 # Using Chutes AI With Roo Code
