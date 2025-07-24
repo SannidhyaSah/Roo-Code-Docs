@@ -1,4 +1,11 @@
 import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
+import tutorialVideos from './docs/tutorial-videos.json';
+
+// Helper function to truncate long titles
+function truncateTitle(title: string, maxLength: number = 40): string {
+  if (title.length <= maxLength) return title;
+  return title.substring(0, maxLength - 3) + '...';
+}
 
 const sidebars: SidebarsConfig = {
   tutorialSidebar: [
@@ -158,7 +165,23 @@ const sidebars: SidebarsConfig = {
         'faq',
       ],
     },
-    'tutorial-videos',
+    {
+      type: 'category',
+      label: 'Tutorial Videos',
+      items: [
+        {
+          type: 'doc',
+          id: 'tutorial-videos',
+          label: 'All Videos',
+        },
+        ...tutorialVideos.videos.map((video) => ({
+          type: 'link' as const,
+          label: truncateTitle(video.title),
+          href: `https://www.youtube.com/watch?v=${video.id}`,
+          description: video.title.length > 40 ? video.title : undefined,
+        })),
+      ],
+    },
     {
       type: 'link',
       label: 'Contributing (GitHub)',
