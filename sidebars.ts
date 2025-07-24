@@ -23,23 +23,23 @@ const sidebars: SidebarsConfig = {
         'basic-usage/context-mentions',
         'basic-usage/using-modes',
         'tips-and-tricks',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Tutorial Videos',
+      items: [
         {
-          type: 'category',
-          label: 'Tutorial Videos',
-          items: [
-            {
-              type: 'doc',
-              id: 'tutorial-videos',
-              label: 'All Videos',
-            },
-            ...tutorialVideos.videos.map((video) => ({
-              type: 'link' as const,
-              label: truncateTitle(video.title),
-              href: `https://www.youtube.com/watch?v=${video.id}`,
-              description: video.title.length > 40 ? video.title : undefined,
-            })),
-          ],
+          type: 'doc',
+          id: 'tutorial-videos',
+          label: 'All Videos',
         },
+        ...tutorialVideos.videos.map((video) => ({
+          type: 'link' as const,
+          label: truncateTitle(video.title),
+          href: `https://www.youtube.com/watch?v=${video.id}`,
+          description: video.title.length > 40 ? video.title : undefined,
+        })),
       ],
     },
     {
