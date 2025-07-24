@@ -2,35 +2,35 @@
   "videos": [
     {
       "id": "Mcq3r1EPZ-4",
-      "title": "Installing Roo Code in VS Code"
+      "title": "Installing Roo Code"
     },
     {
       "id": "eEJErgZBqLE",
-      "title": "Configuring Profiles | Detailed Tutorial"
+      "title": "Configuring Profiles"
     },
     {
       "id": "QDy3dm1xJ6Y",
-      "title": "Setting up MCP server in Roo"
+      "title": "Setting up MCP Servers"
     },
     {
       "id": "jW4_PPyRXCs",
-      "title": "Auto Approve in Roo Code Explained | Detailed Tutorial"
+      "title": "Auto Approve Feature"
     },
     {
       "id": "qgqceCuhlRA",
-      "title": "Custom Modes in Roo Code | Official Tutorial "
+      "title": "Custom Modes"
     },
     {
       "id": "Ho30nyY332E",
-      "title": "Checkpoints in Roo Code | Official Tutorial"
+      "title": "Checkpoints"
     },
     {
       "id": "r1bpod1VWhg",
-      "title": "Codebase Indexing Setup Tutorial"
+      "title": "Codebase Indexing"
     },
     {
       "id": "9k8OAXlszak",
-      "title": "Context Condensing Tutorial"
+      "title": "Context Condensing"
     },
     {
       "id": "WatooxMlW0U",
@@ -38,7 +38,7 @@
     },
     {
       "id": "6h5vB9PpoPk",
-      "title": "Roo Code Todo Lists"
+      "title": "Todo Lists"
     }
   ]
 }
