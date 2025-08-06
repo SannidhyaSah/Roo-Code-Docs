@@ -446,6 +446,21 @@ This setup works reliably on Windows systems using Cygwin, Fish, and the Starshi
 **Issue**: Sometimes VS Code doesn't show or capture all the output from a command.
 
 **Workaround**: If you notice missing output, try closing and reopening the terminal tab, then run the command again. This refreshes the terminal connection.
+
+### Python Virtual Environment (venv) Issues
+
+**Issue**: Disabling shell integration will disable venv; venv is VSCode-managed, Roo does not know anything about it because disabling shell integration uses a completely different mechanism for running commands (execa).
+
+**Workaround**: If you need to use Python virtual environments with Roo Code, you might be able to:
+
+```bash
+killall code # closes all vscode windows!
+. venv/bin/activate
+code
+```
+
+This way the environment is configured before code launches so Roo should inherit it.
+
 ---
 
 ## Troubleshooting Resources
