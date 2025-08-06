@@ -15,6 +15,25 @@ image: /img/social-share.jpg
 
 Create custom slash commands to automate repetitive tasks and extend Roo Code's functionality with simple markdown files.
 
+<div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden' }}>
+  <iframe
+    src="https://www.youtube.com/embed/IOpmeUGLpg0"
+    style={{
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
+    }}
+    frameBorder="0"
+    allow="autoplay; encrypted-media"
+    allowFullScreen
+    title="Slash Commands Tutorial Video"
+  ></iframe>
+</div>
+
+<br />
+
 :::tip Quick Start
 Type `/` in the chat to see all available commands, or create your own by adding a markdown file to `.roo/commands/` or `~/.roo/commands/`!
 :::
