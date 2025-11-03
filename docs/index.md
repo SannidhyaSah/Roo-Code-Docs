@@ -47,7 +47,7 @@ Roo Code unleashes the full power of large language models inside VS Code. No du
     <img src="https://img.youtube.com/vi/r1bpod1VWhg/maxresdefault.jpg" alt="Codebase Indexing" style={{ width: '100%', height: 'auto', borderRadius: '8px', display: 'block' }} />
     <div style={{ marginTop: '0.0rem', textAlign: 'center', fontWeight: 600, fontSize: '1rem' }}>Codebase Indexing</div>
   </a>
-  <a href="https://youtu.be/iiAv1eKOaxk" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+  <a href="https://www.youtube.com/watch?v=iiAv1eKOaxk" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
     <img src="https://img.youtube.com/vi/iiAv1eKOaxk/maxresdefault.jpg" alt="Custom Modes" style={{ width: '100%', height: 'auto', borderRadius: '8px', display: 'block' }} />
     <div style={{ marginTop: '0.0rem', textAlign: 'center', fontWeight: 600, fontSize: '1rem' }}>Custom Modes</div>
   </a>
