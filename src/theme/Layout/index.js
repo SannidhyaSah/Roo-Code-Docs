@@ -1,15 +1,18 @@
 import React from 'react';
 import OriginalLayout from '@theme-original/Layout';
-import { AnimatedBackground } from '../../components/AnimatedBackground';
 import { CookieConsent } from '../../components/CookieConsent';
 import { PostHogProvider } from '../../components/PostHogProvider';
+import { IntercomProvider } from '../../components/IntercomProvider';
+import { AnnouncementBanner } from '../../components/AnnouncementBanner';
 
 export default function Layout(props) {
   return (
     <PostHogProvider>
-      <AnimatedBackground />
-      <OriginalLayout {...props} />
-      <CookieConsent />
+      <IntercomProvider>
+        <AnnouncementBanner />
+        <OriginalLayout {...props} />
+        <CookieConsent />
+      </IntercomProvider>
     </PostHogProvider>
   );
 }

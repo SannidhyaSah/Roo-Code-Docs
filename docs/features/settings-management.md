@@ -143,3 +143,46 @@ Clicking the **Reset** button completely clears all Roo Code configuration data 
 *   **Result:** Roo Code returns to its initial state, as if freshly installed, with default settings and no user configurations.
 
 Use this option only if you are certain you want to remove all Roo Code data or if instructed during troubleshooting. Consider exporting your settings first if you might want to restore them later.
+
+---
+
+## UI Setting
+
+#### System Prompt Context Toggles
+
+Control what contextual information appears in the system prompt:
+
+- **Include Current Time** (Settings → General)
+  - When enabled, adds the current timestamp to the system prompt
+  - When disabled, omits time information from the prompt
+  - Default: Enabled
+
+- **Include Current Cost** (Settings → General)
+  - When enabled, adds the current task cost to the system prompt
+  - When disabled, omits cost information from the prompt
+  - Default: Enabled
+
+**Example Impact:**
+
+With both enabled, the system prompt includes:
+```
+# Current Time
+Current time in ISO 8601 UTC format: 2025-10-28T23:06:08.458Z
+User time zone: America/Edmonton, UTC-6:00
+
+# Current Cost
+$0.14
+```
+
+With both disabled, these sections are omitted, reducing token usage when you don't need this context.
+
+#### Collapse thinking messages by default
+
+- Location: Settings → UI
+- Default: Enabled (thinking messages are collapsed by default)
+- Behavior:
+  - Enabled (default): Thinking blocks remain collapsed until you expand them.
+  - Disabled: Thinking blocks are expanded by default.
+- Notes:
+  - Applies across conversations globally.
+  - Text is localized; labels may differ by language.
