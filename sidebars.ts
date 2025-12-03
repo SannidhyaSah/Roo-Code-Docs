@@ -109,6 +109,7 @@ const sidebars: SidebarsConfig = {
             'features/experimental/concurrent-file-edits',
             'features/experimental/power-steering',
             'features/experimental/background-editing',
+            'features/experimental/parallel-tool-calls',
             'features/image-generation',
             'advanced-usage/available-tools/run-slash-command',
           ],

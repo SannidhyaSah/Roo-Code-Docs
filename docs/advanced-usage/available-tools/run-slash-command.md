@@ -1,4 +1,5 @@
 ---
+sidebar_label: 'Run Slash Commands'
 description: Execute predefined slash commands that provide templated instructions for common tasks, with support for built-in, global, and project-specific commands in Roo Code.
 keywords:
   - run_slash_command
@@ -12,7 +13,7 @@ keywords:
 image: /img/social-share.jpg
 ---
 
-# run_slash_command
+# Run Slash Commands
 
 :::warning Experimental Feature
 The `run_slash_command` tool is an experimental feature that must be explicitly enabled in settings. Navigate to Settings > Experimental Settings and enable "Run Slash Command" to use this tool.
