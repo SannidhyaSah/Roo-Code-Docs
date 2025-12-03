@@ -40,7 +40,7 @@ This speeds up tasks that require multiple independent operations.
 ## Prerequisites
 
 - **Native tool protocol required**: Your model must use native tool calling (OpenAI, Anthropic with native tools, etc.). XML protocol does not support parallel execution.
-- **Model support**: Works with models that support native tool calls (Claude 3.5+, GPT-4+, and compatible providers)
+- **Model support**: Works with models that support native tool calls
 
 #### Check if you're using native protocol
 
