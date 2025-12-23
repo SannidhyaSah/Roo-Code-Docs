@@ -22,7 +22,7 @@ Custom tools is an experimental feature. Custom tools are **automatically approv
 
 ## What it does
 
-Custom tools let you codify project-specific actions into TypeScript/JavaScript files that Roo calls like [`read_file()`](../../basic-usage/how-tools-work) or [`execute_command()`](../../basic-usage/how-tools-work). Ship tool schemas alongside your repo so teammates don't need to keep re-explaining the same workflow steps. Tools are validated with Zod and automatically transpiled from TypeScript.
+Custom tools let you codify project-specific actions into TypeScript/JavaScript files that Roo calls like [`read_file()`](/basic-usage/how-tools-work) or [`execute_command()`](/basic-usage/how-tools-work). Ship tool schemas alongside your repo so teammates don't need to keep re-explaining the same workflow steps. Tools are validated with Zod and automatically transpiled from TypeScript.
 
 ---
 
