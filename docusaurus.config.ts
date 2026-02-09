@@ -318,6 +318,44 @@ const config: Config = {
             from: ['/providers/claude-code'],
           },
 
+          // Redirect removed provider pages (removed in v3.47+)
+          {
+            to: '/',
+            from: ['/providers/cerebras'],
+          },
+          {
+            to: '/',
+            from: ['/providers/chutes'],
+          },
+          {
+            to: '/',
+            from: ['/providers/deepinfra'],
+          },
+          {
+            to: '/',
+            from: ['/providers/doubao'],
+          },
+          {
+            to: '/',
+            from: ['/providers/featherless'],
+          },
+          {
+            to: '/',
+            from: ['/providers/groq'],
+          },
+          {
+            to: '/',
+            from: ['/providers/huggingface'],
+          },
+          {
+            to: '/',
+            from: ['/providers/io-intelligence'],
+          },
+          {
+            to: '/',
+            from: ['/providers/unbound'],
+          },
+
           // Redirect removed Fast Edits feature page
           {
             to: '/',
