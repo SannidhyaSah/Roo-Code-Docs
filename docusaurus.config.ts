@@ -318,6 +318,12 @@ const config: Config = {
             from: ['/providers/claude-code'],
           },
 
+          // Redirect removed Roomote Control page
+          {
+            to: '/roo-code-cloud/task-sync',
+            from: ['/roo-code-cloud/roomote-control'],
+          },
+
           // Redirect removed Fast Edits feature page
           {
             to: '/',
