@@ -34,10 +34,11 @@ This tool searches for an exact string in a file and replaces **exactly one** oc
 
 ## When is it used?
 
-- When renaming variables, functions, or identifiers throughout a file
-- When updating repeated string literals or configuration values
-- When fixing consistent typos or outdated terminology
-- When replacing all instances of a deprecated API or import path
+- When making a targeted change to a specific, uniquely identifiable location in a file
+- When updating a specific string literal or configuration value at a known location
+- When fixing a specific instance of a typo or outdated terminology
+- When replacing a uniquely-identified occurrence of a deprecated API or import path
+- When creating a new file or appending content to an existing file (`old_string=""`)
 - When you need to ensure exact match replacement without fuzzy logic
 
 ---
